@@ -48,7 +48,7 @@ export default class Observable {
      */
     set source(source: EventSource) {
         this.observer.dispose()
-        this.observer = this.observe(source, this.handleEvent)
+        this.observer = this.observe(source, this.handleEvent.bind(this))
     }
 
     /**
