@@ -1,6 +1,6 @@
 {
   "name": "@strong-roots-capital/observable",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Observe and react to EventSources",
   "main": "dist/observable.js",
   "types": "dist/observable.d.ts",
