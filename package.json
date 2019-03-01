@@ -42,6 +42,7 @@
   },
   "homepage": "https://github.com/strong-roots-capital/observable",
   "dependencies": {
+    "@strong-roots-capital/event-source": "0.0.1",
     "@types/node": "^10.12.18",
     "typescript": "^3.2.2"
   },

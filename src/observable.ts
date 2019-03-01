@@ -4,7 +4,7 @@
  */
 
 namespace debug {
-    export const observer = require('debug')('observer')
+    export const observer = require('debug')('observable')
 }
 
 import { EventSource, DEFAULT_EVENT } from '@strong-roots-capital/event-source'
