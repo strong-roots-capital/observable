@@ -29,7 +29,7 @@ DOCUMENT
 
 **set source**(source: *`EventSource`*): `void`
 
-*Defined in [observable.ts:49](https://github.com/strong-roots-capital/observable/blob/3669c7d/src/observable.ts#L49)*
+*Defined in [observable.ts:49](https://github.com/strong-roots-capital/observable/blob/f660ece/src/observable.ts#L49)*
 
 DOCUMENT
 
@@ -51,7 +51,7 @@ ___
 
 ▸ **handleEvent**(event: *`string` \| `symbol`*, ...args: *`any`[]*): `void`
 
-*Defined in [observable.ts:57](https://github.com/strong-roots-capital/observable/blob/3669c7d/src/observable.ts#L57)*
+*Defined in [observable.ts:57](https://github.com/strong-roots-capital/observable/blob/f660ece/src/observable.ts#L57)*
 
 DOCUMENT
 
@@ -71,7 +71,7 @@ ___
 
 ▸ **observe**(ee: *`EventSource`*, callback: *`any`*): `Observer`
 
-*Defined in [observable.ts:35](https://github.com/strong-roots-capital/observable/blob/3669c7d/src/observable.ts#L35)*
+*Defined in [observable.ts:35](https://github.com/strong-roots-capital/observable/blob/f660ece/src/observable.ts#L35)*
 
 DOCUMENT
 
