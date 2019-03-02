@@ -8,7 +8,7 @@ import { EventSource } from '@strong-roots-capital/event-source'
 import Observable from '../src/observable'
 
 
-test.cb('handleEvent method should be invoked on observed event', t => {
+test.cb('overridden handleEvent method should be invoked on observed event', t => {
     class MyObservable extends Observable {
         handleEvent(event: string | symbol, ...args: any[]) {
             t.end()
@@ -18,6 +18,16 @@ test.cb('handleEvent method should be invoked on observed event', t => {
     const myobservable = new MyObservable()
     myobservable.source = es
     es.emit('some-event')
+})
+
+test.cb('default handleEvent method should be invoked on observed event', t => {
+    class MyObservable extends Observable {
+    }
+    const es = new EventSource()
+    const myobservable = new MyObservable()
+    myobservable.source = es
+    es.emit('some-event')
+    t.end()
 })
 
 test.cb('handleEvent should be forwarded the name of the emitted-event as first argument', t => {
