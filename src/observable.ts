@@ -9,22 +9,13 @@ namespace debug {
     export const observer = require('debug')('observable')
 }
 
-import { EventSource, DEFAULT_EVENT } from '@strong-roots-capital/event-source'
-
-/**
- * Provides a clean-up mechanism.
- */
-interface Observer {
-    /**
-     * Removes callback on event-emitter.
-     */
-    dispose: () => void
-}
+import { EventSource } from '@strong-roots-capital/event-source'
+import observe, { Observer } from '@strong-roots-capital/observe'
 
 /**
  * A stub for uninitialized Observers.
  */
-const VoidObservable = { dispose: () => { debug.observer('disposed') } }
+const VoidObserver = { dispose: () => { debug.observer('disposed') } }
 
 /**
  * Encapsulates behavior for an entity capable of listening and
@@ -36,25 +27,7 @@ export default class Observable {
      * The observer of an Event Source, which is stored in stead of
      * the event source itself.
      */
-    protected observer: Observer = VoidObservable
-
-    /**
-     * Observe specified EventSource.
-     *
-     * @param eventSource - EventSource to observe
-     * @param callback - Callback to invoke on event from `eventSource`
-     * @returns Observer of `eventSource`
-     */
-    observe(eventSource: EventSource, callback: any): Observer {
-        debug.observer('observing')
-        eventSource.on(DEFAULT_EVENT, callback)
-        return {
-            dispose: () => {
-                eventSource.removeListener(DEFAULT_EVENT, callback)
-                debug.observer('disposed')
-            }
-        }
-    }
+    protected observer: Observer = VoidObserver
 
     /**
      * Observe a new EventSource.
@@ -71,7 +44,7 @@ export default class Observable {
      */
     set source(source: EventSource) {
         this.observer.dispose()
-        this.observer = this.observe(source, this.handleEvent.bind(this))
+        this.observer = observe(source, this.handleEvent.bind(this))
     }
 
     /**
