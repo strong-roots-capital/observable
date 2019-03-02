@@ -28,7 +28,7 @@ Encapsulates behavior for an entity capable of listening and reacting to an Even
 
 **set source**(source: *`EventSource`*): `void`
 
-*Defined in [observable.ts:45](https://github.com/strong-roots-capital/observable/blob/bc45cd5/src/observable.ts#L45)*
+*Defined in [observable.ts:45](https://github.com/strong-roots-capital/observable/blob/9ecb161/src/observable.ts#L45)*
 
 Observe a new EventSource.
 
@@ -56,7 +56,7 @@ ___
 
 ▸ **handleEvent**(event: *`string` \| `symbol`*, ...args: *`any`[]*): `void`
 
-*Defined in [observable.ts:58](https://github.com/strong-roots-capital/observable/blob/bc45cd5/src/observable.ts#L58)*
+*Defined in [observable.ts:58](https://github.com/strong-roots-capital/observable/blob/9ecb161/src/observable.ts#L58)*
 
 Event-handler to be invoked when observed EventSource emits an event. Override this function in a sub-class for custom behavior.
 
