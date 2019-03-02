@@ -17,7 +17,6 @@ Encapsulates behavior for an entity capable of listening and reacting to an Even
 ### Methods
 
 * [handleEvent](observable.md#handleevent)
-* [observe](observable.md#observe)
 
 ---
 
@@ -29,7 +28,7 @@ Encapsulates behavior for an entity capable of listening and reacting to an Even
 
 **set source**(source: *`EventSource`*): `void`
 
-*Defined in [observable.ts:72](https://github.com/strong-roots-capital/observable/blob/319e4fb/src/observable.ts#L72)*
+*Defined in [observable.ts:45](https://github.com/strong-roots-capital/observable/blob/847d17b/src/observable.ts#L45)*
 
 Observe a new EventSource.
 
@@ -57,7 +56,7 @@ ___
 
 ▸ **handleEvent**(event: *`string` \| `symbol`*, ...args: *`any`[]*): `void`
 
-*Defined in [observable.ts:85](https://github.com/strong-roots-capital/observable/blob/319e4fb/src/observable.ts#L85)*
+*Defined in [observable.ts:58](https://github.com/strong-roots-capital/observable/blob/847d17b/src/observable.ts#L58)*
 
 Event-handler to be invoked when observed EventSource emits an event. Override this function in a sub-class for custom behavior.
 
@@ -69,27 +68,6 @@ Event-handler to be invoked when observed EventSource emits an event. Override t
 | `Rest` args | `any`[] |  Arguments emitted by observed EventSource |
 
 **Returns:** `void`
-
-___
-<a id="observe"></a>
-
-###  observe
-
-▸ **observe**(eventSource: *`EventSource`*, callback: *`any`*): `Observer`
-
-*Defined in [observable.ts:48](https://github.com/strong-roots-capital/observable/blob/319e4fb/src/observable.ts#L48)*
-
-Observe specified EventSource.
-
-**Parameters:**
-
-| Name | Type | Description |
-| ------ | ------ | ------ |
-| eventSource | `EventSource` |  EventSource to observe |
-| callback | `any` |  Callback to invoke on event from \`eventSource\` |
-
-**Returns:** `Observer`
-Observer of `eventSource`
 
 ___
 
