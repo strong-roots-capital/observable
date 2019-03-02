@@ -2,7 +2,7 @@
 
 # Class: Observable
 
-DOCUMENT
+Encapsulates behavior for an entity capable of listening and reacting to an Event Source.
 
 ## Hierarchy
 
@@ -29,15 +29,21 @@ DOCUMENT
 
 **set source**(source: *`EventSource`*): `void`
 
-*Defined in [observable.ts:49](https://github.com/strong-roots-capital/observable/blob/1ac38a5/src/observable.ts#L49)*
+*Defined in [observable.ts:72](https://github.com/strong-roots-capital/observable/blob/319e4fb/src/observable.ts#L72)*
 
-DOCUMENT
+Observe a new EventSource.
+
+*__remarks__*: Dispatches the old Observer. Thus, to stop observing any events set source to a new EventSource as follows
+
+```ts
+myObservable.source = new EventSource()
+```
 
 **Parameters:**
 
-| Name | Type |
-| ------ | ------ |
-| source | `EventSource` |
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| source | `EventSource` |  New EventSource to observe. |
 
 **Returns:** `void`
 
@@ -51,16 +57,16 @@ ___
 
 ▸ **handleEvent**(event: *`string` \| `symbol`*, ...args: *`any`[]*): `void`
 
-*Defined in [observable.ts:57](https://github.com/strong-roots-capital/observable/blob/1ac38a5/src/observable.ts#L57)*
+*Defined in [observable.ts:85](https://github.com/strong-roots-capital/observable/blob/319e4fb/src/observable.ts#L85)*
 
-DOCUMENT
+Event-handler to be invoked when observed EventSource emits an event. Override this function in a sub-class for custom behavior.
 
 **Parameters:**
 
-| Name | Type |
-| ------ | ------ |
-| event | `string` \| `symbol` |
-| `Rest` args | `any`[] |
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| event | `string` \| `symbol` |  Event emitted by observed EventSource |
+| `Rest` args | `any`[] |  Arguments emitted by observed EventSource |
 
 **Returns:** `void`
 
@@ -69,20 +75,21 @@ ___
 
 ###  observe
 
-▸ **observe**(ee: *`EventSource`*, callback: *`any`*): `Observer`
+▸ **observe**(eventSource: *`EventSource`*, callback: *`any`*): `Observer`
 
-*Defined in [observable.ts:35](https://github.com/strong-roots-capital/observable/blob/1ac38a5/src/observable.ts#L35)*
+*Defined in [observable.ts:48](https://github.com/strong-roots-capital/observable/blob/319e4fb/src/observable.ts#L48)*
 
-DOCUMENT
+Observe specified EventSource.
 
 **Parameters:**
 
-| Name | Type |
-| ------ | ------ |
-| ee | `EventSource` |
-| callback | `any` |
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| eventSource | `EventSource` |  EventSource to observe |
+| callback | `any` |  Callback to invoke on event from \`eventSource\` |
 
 **Returns:** `Observer`
+Observer of `eventSource`
 
 ___
 
